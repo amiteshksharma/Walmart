@@ -1,0 +1,128 @@
+:root {
+    --main-color: #282c34;
+    --white: rgb(228, 228, 228);
+}
+
+.issue-page {
+    width: 100%;
+    height: calc(100vh);
+    background-color: var(--main-color);
+    color: var(--white);
+    display: flex;
+    flex: row;
+}
+
+.left-divider {
+    width: calc(23vw);
+    height: calc(100vh);
+    box-shadow: 4px 4px 20px 1px rgb(46, 46, 46);
+    border-bottom-right-radius: calc(1vh);
+    border-top-right-radius: calc(1vh);
+    background-color: #252525;
+    text-align: center;
+}
+
+.important-info {
+    padding-top: calc(2vh);
+}
+
+#title-issue {
+    font-size: calc(30px);
+    font-weight: 600;
+    width: calc(95%);
+}
+
+.left-divider hr {
+    border: 1px solid white;
+    width: 93%;
+}
+
+.details-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.details-issue {
+    width: 100%;
+    text-align: left;
+}
+
+.details-issue-label {
+    width: 100%;
+    text-align: left;
+    padding-left: calc(1.2vw);
+}
+
+.details-issue h4, .details-issue-label h4 {
+    font-size: 20px;
+    margin-bottom: calc(2vh);
+    font-weight: 400;
+}
+
+.details-issue-label h4 {
+    text-decoration: underline;
+}
+
+.avatar-image {
+    margin-top: calc(7vh);
+}
+
+.avatar-image img {
+    border-radius: calc(2vh);
+}
+
+.url-issue {
+    margin-left: calc(2vw);
+}
+
+.body {
+    padding-top: calc(3vh);
+    max-width: calc(40vw);
+}
+
+.body h1 {
+    font-weight: 700;
+    text-decoration: underline;
+    font-size: 34px;
+}
+
+.body h4 {
+    margin-top: calc(2vh);
+    font-size: 20px;
+}
+
+.issue-url, .repo-url, .repo-name {
+    display: flex;
+    flex: row;
+    margin-top: calc(3vh);
+}
+
+.issue-url h1, .repo-url h1, .repo-name h1 {
+    font-weight: 700;
+    text-decoration: underline;
+    font-size: 22px;    
+}
+
+.issue-url h4, .repo-url h4, .repo-name h4 {
+    font-size: 22px;
+    padding-left: calc(2vw);
+}
+
+.issue-url a, .repo-url a { 
+    color: rgb(206, 206, 206);
+}
+
+.issue-url a:hover, .repo-url a:hover { 
+    color: rgb(150, 150, 150);
+}
+
+.main-menu-button {
+    position: absolute;
+    right: calc(2vw);
+    top: calc(2vh);
+}
+
+.return-button {
+    width: calc(15vw);
+}

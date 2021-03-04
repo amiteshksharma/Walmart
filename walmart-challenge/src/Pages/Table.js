@@ -38,6 +38,7 @@ export default class Table extends React.Component {
         expandRowData.push(getIssue.comments_url);
 
         temp.push(expandRowData);
+        temp.push(getIssue);
         
         return temp;
     }

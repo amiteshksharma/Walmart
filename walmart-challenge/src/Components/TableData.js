@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 import MUIDataTable from "mui-datatables";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -61,14 +62,16 @@ const columns = [
             viewColumns: false,
             filter: false    
         }
-    }
+    },
+    {
+        name: 'All Data',
+        options: {
+            display: false,
+            viewColumns: false,
+            filter: false    
+        }
+    },
 ];
-
-const styles = {
-    width: 'calc(10vw)',
-    minWidth: 'calc(10vw)',
-    maxWidth: 'calc(10vw)'
-}
 
 // format the data in the dropdown
 const createData = ( avatar, body, update, comments, url ) => {
@@ -125,17 +128,27 @@ const renderRow = (rowData, rowMeta) => {
     )
 }
 
-// options for the datatable
-const options = {
-    filterType: 'textField',
-    expandableRows: true,
-    expandableRowsOnClick: true,
-    renderExpandableRow: renderRow,
-    rowsPerPageOptions: [5, 10, 25],
-};
-
 export default function TableData(props) {
     const data = props.data; 
+    const history = useHistory();
+
+    const redirectRow = (rowData, rowMeta, rowIndex) => {
+        history.push({
+            pathname: '/issue',
+            state: {
+                data: rowData[6]
+            }
+        })
+    };
+
+    // options for the datatable
+    const options = {
+        filterType: 'textField',
+        expandableRows: true,
+        onRowClick: redirectRow,
+        renderExpandableRow: renderRow,
+        rowsPerPageOptions: [5, 10, 25],
+    };
 
     return (
         <MUIDataTable

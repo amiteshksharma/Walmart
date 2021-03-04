@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
-import { makeStyles } from '@material-ui/core/styles';
 import '../Css/Home.css';
 
 function Alert(props) {
