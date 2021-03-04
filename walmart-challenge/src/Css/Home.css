@@ -1,0 +1,36 @@
+:root {
+    --main-color: #282c34;
+    --white: rgb(228, 228, 228);
+}
+
+.home-page {
+    background-color: var(--main-color);
+    height: calc(100vh);
+    width: calc(100%);
+}
+
+.section-description {
+    position: fixed;
+    top: 35%;
+    left: 25%;
+}
+
+#title {
+    font-size: 30px;
+    color: var(--white);
+    text-align: center;
+    font-weight: 700;
+}
+
+#description {
+    font-size: 18px;
+    color: var(--white);
+    text-align: center;
+    font-weight: 500;
+}
+
+.section-input {
+    position: fixed;
+    top: 50%;
+    left: 45%;
+}
