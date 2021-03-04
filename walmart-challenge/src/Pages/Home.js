@@ -4,6 +4,8 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 // import TextField from '@material-ui/core/TextField'; 
 import '../Css/Home.css';
 
+const DEFAULT_URL = 'https://api.github.com/repos/walmartlabs/thorax/issues';
+
 class Home extends React.Component {
     constructor(props) {
         super(props);
@@ -11,13 +13,25 @@ class Home extends React.Component {
         this.state = {
             GithubURL: '',
             Error: false,
+            IssuesList: []
         }
 
         this.getData = this.getData.bind(this);
     }
 
     getData(url) {
-        let fetchUrl = url ? url : 'some value';
+        let fetchUrl = url ? url : DEFAULT_URL;
+
+        fetch(fetchUrl)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            this.setState(IssuesList);
+        })
+        .catch(err => {
+            this.setState({ Error: true });
+            console.log(err);
+        })
 
     }
 
@@ -47,10 +61,10 @@ class Home extends React.Component {
 
                         <span>
                             <Button variant="primary" id="submit-button" 
-                                onClick={() => console.log('clicked')}>Submit</Button>
+                                onClick={() => this.getData(this.state.GithubURL)}>Submit</Button>
 
                             <Button variant="info" id="default-button" 
-                                onClick={() => console.log('clicked')}>Default</Button>
+                                onClick={() => this.getData()}>Default</Button>
                         </span>
                     </Form>   
                 </section>
