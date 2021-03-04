@@ -79,16 +79,17 @@ class Home extends React.Component {
                 <section className="section-input">
                     <Form>    
                         <Form.Group>
-                            <Form.Control type="email" placeholder="Github API Issues URL" id="form-github" 
-                                onChange={(e) => this.setState({ GithubURL: e.target.value })} />
+                            <Form.Control placeholder="Github API Issues URL" id="form-github" 
+                                onChange={(e) => this.setState({ GithubURL: e.target.value })} 
+                                />
                         </Form.Group>
 
                         <span>
                             <Button variant="primary" id="submit-button" 
-                                onClick={() => this.getData(this.state.GithubURL, false)}>Submit</Button>
+                                onClick={(e) => this.getData(this.state.GithubURL, false)}>Submit</Button>
 
                             <Button variant="info" id="default-button" 
-                                onClick={() => this.getData(null, true)}>Default</Button>
+                                onClick={(e) => this.getData(null, true)}>Default</Button>
                         </span>
                     </Form>   
                 </section>
