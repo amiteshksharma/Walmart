@@ -7,12 +7,14 @@
     background-color: var(--main-color);
     height: calc(100vh);
     width: calc(100%);
+    display: flex;
+    flex-direction: column;
 }
 
 .section-description {
-    position: fixed;
-    top: 35%;
-    left: 25%;
+    display: flex;
+    align-items: center;
+    margin-top: calc(30vh);
 }
 
 #title {
@@ -30,10 +32,11 @@
 }
 
 .section-input {
-    position: fixed;
-    top: 47%;
-    left: 38.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    margin-top: calc(4vh);
 }
 
 #form-github {

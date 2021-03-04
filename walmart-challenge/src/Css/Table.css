@@ -1,0 +1,30 @@
+:root {
+    --main-color: #282c34;
+    --white: rgb(228, 228, 228);
+}
+
+.table-page {
+    background-color: var(--main-color);
+    height: calc(100vh);
+    width: calc(100%);
+    display: flex;
+    flex-direction: column;
+    padding-top: calc(3vh);
+}
+
+/* Sets the background color for the table header column */
+span.MuiButton-label > div > div:nth-child(1) {
+    font-weight: bold;
+    font-size: calc(14px);
+}
+
+/* Sets the background color for the rows in the dropdown row */
+#table-cell-avatar, #table-cell-body, #table-cell-update {
+    font-weight: bold;
+}
+
+#return-home-page {
+    width: calc(12vw);
+    margin-bottom: calc(2vh);
+    margin-left: calc(2vw);
+}
