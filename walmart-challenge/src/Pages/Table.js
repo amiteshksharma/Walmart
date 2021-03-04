@@ -34,6 +34,8 @@ export default class Table extends React.Component {
         expandRowData.push(getIssue.body);
         expandRowData.push(this.formatDate(new Date(getIssue.updated_at).toString()))
         expandRowData.push(getIssue.user.avatar_url);
+        expandRowData.push(getIssue.url);
+        expandRowData.push(getIssue.comments_url);
 
         temp.push(expandRowData);
         

@@ -49,6 +49,7 @@ class Home extends React.Component {
         fetch(fetchUrl)
         .then(res => res.json())
         .then(data => {
+            console.log(data);
             this.props.setIssues(data);
             this.props.showTable(true);
         })

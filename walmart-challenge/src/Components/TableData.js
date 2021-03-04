@@ -71,8 +71,8 @@ const styles = {
 }
 
 // format the data in the dropdown
-const createData = ( avatar, body, update ) => {
-    return { avatar, body, update };
+const createData = ( avatar, body, update, comments, url ) => {
+    return { avatar, body, update, comments, url };
 }
 
 /**
@@ -85,7 +85,7 @@ const renderRow = (rowData, rowMeta) => {
     if(!rowData) return;
     const rows = []
     let obj = rowData[5];
-    rows.push(createData(obj[2], obj[0], obj[1]))
+    rows.push(createData(obj[2], obj[0], obj[1], obj[3], obj[4]))
 
     return (
         <React.Fragment>
@@ -99,6 +99,8 @@ const renderRow = (rowData, rowMeta) => {
                       <TableCell></TableCell>
                       <TableCell id="table-cell-avatar">Avatar</TableCell>
                       <TableCell id="table-cell-body">Body</TableCell>
+                      <TableCell id="table-cell-body">Repository URL</TableCell>
+                      <TableCell id="table-cell-update">Comments URL</TableCell>
                       <TableCell id="table-cell-update">Updated Last</TableCell>
                     </TableRow>
                   </TableHead>
@@ -106,10 +108,12 @@ const renderRow = (rowData, rowMeta) => {
                   {/* The dropdown row data */}
                     {rows.map((row, ind) => (
                       <TableRow key={ind}>
-                        <TableCell></TableCell>
+                        <TableCell style={{width: '3.6%'}}></TableCell>
                         <TableCell style={{width: '15.8%'}}><img src={row.avatar} height={60} width={60} alt="Avatar" /></TableCell>
-                        <TableCell style={{width: '52%'}}><p styling={styles}>{row.body}</p></TableCell>
-                        <TableCell style={{width: '28.6%'}}><p>{row.update}</p></TableCell>                        
+                        <TableCell style={{width: '42.9%'}}><p>{row.body}</p></TableCell>
+                        <TableCell style={{width: '9%'}}><a href={row.url}>Github Repo URL</a></TableCell>
+                        <TableCell style={{width: '12.6%'}}><a href={row.comments}>Github Comments URL</a></TableCell>            
+                        <TableCell><p>{row.update}</p></TableCell>                        
                       </TableRow>
                     ))}
                   </TableBody>
