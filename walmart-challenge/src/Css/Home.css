@@ -31,6 +31,21 @@
 
 .section-input {
     position: fixed;
-    top: 50%;
-    left: 45%;
+    top: 47%;
+    left: 38.5%;
+    text-align: center;
+}
+
+#form-github {
+    width: calc(27vw);
+    margin-bottom: calc(2vh);
+}
+
+#submit-button {
+    margin-right: calc(2vw);
+    width: calc(25%);
+}
+
+#default-button {
+    width: calc(25%);
 }
